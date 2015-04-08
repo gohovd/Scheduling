@@ -10,13 +10,13 @@ public class Runnable {
     static FCFS fcfs;
     static SSTF sstf;
     static final int initialCylinder = 110; //starting position(?)
+    static int[] ref;
 
 
     public static void main(String[] args) throws IOException {
         Scanner userInput = new Scanner(System.in);
         boolean ack = false;
         String x;
-        ArrayList<Integer> ref = new ArrayList();
         while (!ack) {
             System.out.println("Please follow the instructions in the console. \n" +
                     "Text providing instructions will have a percentage symbol prefix. \n");
@@ -28,15 +28,21 @@ public class Runnable {
             if (x.isEmpty()) {
                 System.out.println("% The input string cannot be empty.");
             } else if (!x.isEmpty()) {
+                int no = 0;
                 String[] split = x.split(" ");
+                ref = new int[split.length];
                 for (String s : split) {
                     int sint = Integer.parseInt(s);
-                    ref.add(sint);
+                    ref[no] = sint;
+                    no++;
+                    System.out.println(sint);
                 }
                 ack = true;
             }
         }
         //here we pass the array of integers to the various scheduling algorithms..
+        sstf = new SSTF(ref, initialCylinder);
+        System.out.println("SSTF headspace: " + sstf.serviceRequests());
 
     }
 }
