@@ -5,6 +5,7 @@ public class FCFS implements DiskScheduler {
 
     /**
      * The first-come first-server scheduling algorithm.
+     * SO EASY SO WOW MUCH GREAT
      */
     public FCFS(){
 
