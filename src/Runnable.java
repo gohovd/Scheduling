@@ -35,7 +35,6 @@ public class Runnable {
                     int sint = Integer.parseInt(s);
                     ref[no] = sint;
                     no++;
-                    System.out.println(sint);
                 }
                 ack = true;
             }
