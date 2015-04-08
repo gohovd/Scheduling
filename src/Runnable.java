@@ -42,8 +42,15 @@ public class Runnable {
         //here we pass the array of integers to the various scheduling algorithms..
         sstf = new SSTF(ref, initialCylinder);
         System.out.println("SSTF headspace: " + sstf.serviceRequests());
-        //7fcfs = new FCFS(ref, initialCylinder);
-       // System.out.println("FCFS headspace: " + fcfs.serviceRequests());
+        System.out.print("SSTF path: ");
+        for(int i : sstf.returnPath()){
+            System.out.print(i + " ");
+        }
+        //change line..
+        System.out.println("\n");
+
+        fcfs = new FCFS(ref, initialCylinder);
+        System.out.println("FCFS headspace: " + fcfs.serviceRequests());
 
     }
 }

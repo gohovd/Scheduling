@@ -57,4 +57,9 @@ class SSTF implements DiskScheduler{
         }
         System.out.println("");
     }
+
+    public int[] returnPath(){
+        int[] path = path();
+        return path;
+    }
 }

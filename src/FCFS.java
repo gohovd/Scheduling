@@ -13,17 +13,17 @@ public class FCFS implements DiskScheduler {
     }
 
     public int serviceRequests() {
-        int headmovement = 0;
+        int headMovement = 0;
         int prev = initialCylinder;
         for (int i = 0; i < queue.length; i++) {
             if (init) {
-                headmovement += Math.abs(queue[i - 1] - queue[i]);
+                headMovement += Math.abs(queue[i - 1] - queue[i]);
             }
             if (!init) {
-                headmovement += Math.abs(queue[i] - prev);
+                headMovement += Math.abs(queue[i] - prev);
                 init = true;
             }
         }
-        return headmovement;
+        return headMovement;
     }
 }
