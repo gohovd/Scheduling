@@ -1,6 +1,6 @@
 import java.util.*;
 
-class CSCAN {
+public class CSCAN implements DiskScheduler {
 
     int head=0;
     int dir=0;
@@ -59,7 +59,7 @@ class CSCAN {
         if(head>=end){
             start=7;
         }
-        System.out.println("The Start Pos Is:"+ref[start][0]);
+        System.out.println("Start position i0s:"+ref[start][0]);
     }
 
     void getInput(){
@@ -96,15 +96,14 @@ class CSCAN {
             sum[0]+=Math.abs((end-beg)+ref[0][0]);
             System.out.println("Left Sum Is "+sum[0]+" Right sum is "+sum[1]);
         }
-        System.out.println("The Total Cylinder Mov Are:"+(sum[0]+sum[1]));
+        System.out.println("The Total Cylinder Movement Are:"+(sum[0]+sum[1]));
 
     }
 
-}
 
-class CSCANDSTest{
-    public static void main(String args[]){
-        CSCAN one=new CSCAN();
-        one.compute();
+    @Override
+    public int serviceRequests() {
+        return 0;
     }
 }
+
