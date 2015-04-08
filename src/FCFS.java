@@ -26,4 +26,8 @@ public class FCFS implements DiskScheduler {
         }
         return headMovement;
     }
+
+    public int[] returnPath(){
+        return queue;
+    }
 }

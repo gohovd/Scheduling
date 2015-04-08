@@ -51,6 +51,12 @@ public class Runnable {
 
         fcfs = new FCFS(ref, initialCylinder);
         System.out.println("FCFS headspace: " + fcfs.serviceRequests());
+        System.out.print("FCFS path: ");
+        for(int i : fcfs.returnPath()) {
+            System.out.print(i + " ");
+        }
+        //change line..
+        System.out.println("\n");
 
     }
 }
