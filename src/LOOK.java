@@ -1,27 +1,24 @@
 import java.util.*;
 
-public class SCAN implements DiskScheduler {
+public class LOOK implements DiskScheduler {
     TreeMap<Integer, Integer> refStr;
     int start;
-    int max;
 
     /* Constructor
      *
      * @param refStr Integer array of cylinder service requests
      * @param start  Cylinder to begin the algorithm at
-     * @param max    Index of the last cylinder on disk
      */
-    public SCAN(int[] refStr, int start, int max) {
+    public LOOK(int[] refStr, int start) {
         this.refStr = new TreeMap<Integer, Integer>();
         for (int i = 0; i < refStr.length; i++) {
             this.refStr.put(refStr[i], refStr[i]);
         }
         this.refStr.put(start, start);
         this.start = start;
-        this.max = max;
     }
 
-    /* Services the requests using Scan, starting in the direction with fewer requests
+    /* Services the requests using C-Look, starting in the direction with fewer requests
      *
      * @return The amount of head movement for this algorithm
      */
@@ -45,9 +42,6 @@ public class SCAN implements DiskScheduler {
                 head = next;
                 lesser.remove(new Integer(next));
             }
-            // Go down to zero
-            total += Math.abs(head - 0);
-            head = 0;
             // ...then do those greater than the starting location
             while (!greater.isEmpty()) {
                 // Get the next location, add the distance to the total, and remove that location
@@ -65,9 +59,6 @@ public class SCAN implements DiskScheduler {
                 head = next;
                 greater.remove(new Integer(next));
             }
-            // Go to the last cylinder
-            total += Math.abs(head - max);
-            head = max;
             // ...then do those less than the starting location
             while (!lesser.isEmpty()) {
                 // Get the next location, add the distance to the total, and remove that location

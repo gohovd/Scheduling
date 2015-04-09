@@ -6,7 +6,9 @@ public class Runnable {
 
     static FCFS fcfs;
     static SSTF sstf;
-    static final int initialCylinder = 0; //starting position(?)
+    static SCAN scan;
+    static LOOK look;
+    static final int initialCylinder = 50; //starting position(?)
     static int[] ref;
 
 
@@ -55,5 +57,19 @@ public class Runnable {
         //change line..
         System.out.println("\n");
 
+        //collect highest value from array, to pass to class SCAN
+        int max = 0;
+        for(int i : ref){
+            if(i > max){
+                max = i;
+            }
+        }
+        scan = new SCAN(ref, initialCylinder, 1000);
+        System.out.println("SCAN headspace: " + scan.serviceRequests());
+
+        //System.out.println("\n");
+
+        look = new LOOK(ref, initialCylinder);
+        System.out.println("LOOK headspace: " + look.serviceRequests());
     }
 }
