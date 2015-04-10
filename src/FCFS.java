@@ -1,5 +1,5 @@
 
-public class FCFS implements DiskScheduler {
+public class FCFS{
 
     int[] queue;
     int startPos;

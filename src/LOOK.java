@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class LOOK implements DiskScheduler {
+public class LOOK{
     TreeMap<Integer, Integer> refStr;
     int start;
 
@@ -13,7 +13,6 @@ public class LOOK implements DiskScheduler {
         this.start = start;
     }
 
-    @Override
     public int serviceRequests() {
         int head = start;
         int total = 0;

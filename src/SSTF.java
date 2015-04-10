@@ -1,4 +1,4 @@
-class SSTF implements DiskScheduler{
+class SSTF{
     int[] queue;
     int startPos;
 
@@ -46,18 +46,7 @@ class SSTF implements DiskScheduler{
         return nearestCylinder;
     }
 
-    public void println(){
-        System.out.println("SSTF head movement = " + serviceRequests());
-
-        System.out.print("SSTF Path = ");
-        for(int i: path()){
-            System.out.print(i + " ");
-        }
-        System.out.println("");
-    }
-
     public int[] returnPath(){
-        int[] path = path();
-        return path;
+        return path();
     }
 }

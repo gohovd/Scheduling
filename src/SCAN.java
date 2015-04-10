@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class SCAN implements DiskScheduler {
+public class SCAN{
     TreeMap<Integer, Integer> refStr;
     int start;
     int max;
@@ -32,7 +32,6 @@ public class SCAN implements DiskScheduler {
                 total += Math.abs(head - next);
                 head = next;
                 lesser.remove(next);
-
             }
 
             total += Math.abs(head);

@@ -1,5 +1,5 @@
 import java.io.IOException;
-import java.util.ArrayList;
+
 import java.util.Scanner;
 
 public class Runnable {
@@ -8,25 +8,23 @@ public class Runnable {
     static SSTF sstf;
     static SCAN scan;
     static LOOK look;
-    static int headstart = 500; //starting position(?)
+    static int headstart;
     static int[] ref;
 
 
     public static void main(String[] args) throws IOException {
+
         Scanner userInput = new Scanner(System.in);
         boolean ack = false;
         String x;
         while (!ack) {
-            System.out.println("Please follow the instructions in the console. \n" +
-                    "Text providing instructions will have a percentage symbol prefix. \n");
-            System.out.println("% Enter a reference string for the simulation. \n" +
-                    "% Example reference (corr. syntax): 50,10,39,42,11,24,30. \n" +
-                    "% The headspace for FCFS, SSTF, SCAN and LOOK will be returned. \n" +
-                    "% Along with the sequence of operations almost every scheduling algorithm.");
+            System.out.println((char)27 + "[34mEnter a queue, example: 3,20,1,50,30" + (char)27 + "[0m");
+            System.out.println((char)27 + "[34mThe first number in the queue will be the head start position" + (char)27 + "[0m");
+
             x = userInput.nextLine();
             if (x.isEmpty()) {
-                System.out.println("% The input string cannot be empty.");
-            } else if (!x.isEmpty()) {
+                System.out.println("Input can not be empty.");
+            } else {
                 int no = 0;
                 String[] split = x.split(",");
                 ref = new int[split.length];
@@ -39,27 +37,27 @@ public class Runnable {
                 ack = true;
             }
         }
-        System.out.println("IC: " + headstart);
-        //here we pass the array of integers to the various scheduling algorithms..
+
+        System.out.println("Head start position: " + headstart + "\n");
+
         sstf = new SSTF(ref, headstart);
-        System.out.println("SSTF headspace: " + sstf.serviceRequests());
+        System.out.println("SSTF total head movement: " + sstf.serviceRequests());
         System.out.print("SSTF path: ");
         for(int i : sstf.returnPath()){
             System.out.print(i + " ");
         }
-        //change line..
+
         System.out.println("\n");
 
         fcfs = new FCFS(ref, headstart);
-        System.out.println("FCFS headspace: " + fcfs.serviceRequests());
+        System.out.println("FCFS total head movement: " + fcfs.serviceRequests());
         System.out.print("FCFS path: ");
         for(int i : fcfs.returnPath()) {
             System.out.print(i + " ");
         }
-        //change line..
+
         System.out.println("\n");
 
-        //collect highest value from array, to pass to class SCAN
         int max = 0;
         for(int i : ref){
             if(i > max){
@@ -67,11 +65,13 @@ public class Runnable {
             }
         }
         scan = new SCAN(ref, headstart, 1000);
-        System.out.println("SCAN headspace: " + scan.serviceRequests());
+        System.out.println("SCAN total head movement: " + scan.serviceRequests());
+        System.out.println((char)27 + "[31mSCAN path not yet functional" + (char)27 + "[0m");
 
-        //System.out.println("\n");
+        System.out.println("\n");
 
         look = new LOOK(ref, headstart);
-        System.out.println("LOOK headspace: " + look.serviceRequests());
+        System.out.println("LOOK total head movement: " + look.serviceRequests());
+        System.out.println((char)27 + "[31mLOOK path not yet functional" + (char)27 + "[0m");
     }
 }
