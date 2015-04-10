@@ -11,9 +11,9 @@ class SSTF implements DiskScheduler{
         int headMovement = 0;
         int prev = startPos;
         int [] rpath = path();
-        for (int i=0; i < rpath.length; i++) {
-            headMovement += Math.abs(rpath[i]-prev);
-            prev = rpath[i];
+        for (int aRpath : rpath) {
+            headMovement += Math.abs(aRpath - prev);
+            prev = aRpath;
         }
         return headMovement;
     }
@@ -22,9 +22,7 @@ class SSTF implements DiskScheduler{
         int [] resultPath = new int[queue.length];
         int now = startPos;
         int [] requests = new int[queue.length];
-        for (int i = 0; i < queue.length; i++){
-            requests[i] = queue[i];
-        }
+        System.arraycopy(queue, 0, requests, 0, queue.length);
         for (int i = 0; i < resultPath.length; i++){
             int closest = closest(now, requests);
             resultPath[i] = closest;
@@ -36,11 +34,11 @@ class SSTF implements DiskScheduler{
     int closest(int k, int[] requests){
         int min = 5000000;
         int minPos = -1;
-        for (int i = 0; i < requests.length; i++){
-            if (requests[i] == -1) continue;
-            else if  (Math.abs(k-queue[i]) < min) {
+        for (int i = 0; i < requests.length; i++) {
+            if (requests[i] == -1) {
+            } else if (Math.abs(k - queue[i]) < min) {
                 minPos = i;
-                min = Math.abs(k-queue[i++]);
+                min = Math.abs(k - queue[i++]);
             }
         }
         int nearestCylinder = requests[minPos];

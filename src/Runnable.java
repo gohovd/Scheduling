@@ -8,7 +8,7 @@ public class Runnable {
     static SSTF sstf;
     static SCAN scan;
     static LOOK look;
-    static int headstart = 0; //starting position(?)
+    static int headstart = 500; //starting position(?)
     static int[] ref;
 
 
