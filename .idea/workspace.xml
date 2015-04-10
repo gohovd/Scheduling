@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aaabf311-50b1-4903-a8fd-fab4bcf6c93d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FCFS.java" afterPath="$PROJECT_DIR$/src/FCFS.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Runnable.java" afterPath="$PROJECT_DIR$/src/Runnable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SCAN.java" afterPath="$PROJECT_DIR$/src/SCAN.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SSTF.java" afterPath="$PROJECT_DIR$/src/SSTF.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Scheduling.iws" />
@@ -42,8 +43,8 @@
       <file leaf-file-name="FCFS.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FCFS.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
-              <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="70" max-vertical-offset="646">
+              <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
               <folding>
                 <element signature="e#727#728#0" expanded="true" />
                 <element signature="e#755#756#0" expanded="true" />
@@ -55,18 +56,18 @@
       <file leaf-file-name="SSTF.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SSTF.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1207">
-              <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="631" max-vertical-offset="1207">
+              <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SCAN.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SCAN.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SCAN.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1496">
-              <caret line="45" column="49" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="49" />
+            <state vertical-scroll-proportion="-0.3246528" vertical-offset="561" max-vertical-offset="1547">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -82,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Runnable.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Runnable.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Runnable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.8888889" vertical-offset="801" max-vertical-offset="1377">
-              <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1377">
+              <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,11 +106,11 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/CSCAN.java" />
         <option value="$PROJECT_DIR$/src/DiskScheduler.java" />
-        <option value="$PROJECT_DIR$/src/SCAN.java" />
         <option value="$PROJECT_DIR$/src/LOOK.java" />
         <option value="$PROJECT_DIR$/src/FCFS.java" />
-        <option value="$PROJECT_DIR$/src/SSTF.java" />
         <option value="$PROJECT_DIR$/src/Runnable.java" />
+        <option value="$PROJECT_DIR$/src/SCAN.java" />
+        <option value="$PROJECT_DIR$/src/SSTF.java" />
       </list>
     </option>
   </component>
@@ -436,7 +437,13 @@
       <option name="project" value="LOCAL" />
       <updated>1428594394550</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="initialCylinder == startPos;">
+      <created>1428666998876</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1428666998876</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -492,7 +499,8 @@
     <MESSAGE value="CSCAN" />
     <MESSAGE value="SSTF update." />
     <MESSAGE value="SCAN&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="SCAN&#10;" />
+    <MESSAGE value="initialCylinder == startPos;" />
+    <option name="LAST_COMMIT_MESSAGE" value="initialCylinder == startPos;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -851,33 +859,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FCFS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
-          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-          <folding>
-            <element signature="e#727#728#0" expanded="true" />
-            <element signature="e#755#756#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SSTF.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1207">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SCAN.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1496">
-          <caret line="45" column="49" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/LOOK.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1659">
@@ -888,11 +869,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Runnable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.8888889" vertical-offset="801" max-vertical-offset="1377">
-          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1377">
+          <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FCFS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="70" max-vertical-offset="646">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding>
+            <element signature="e#727#728#0" expanded="true" />
+            <element signature="e#755#756#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SSTF.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="631" max-vertical-offset="1207">
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SCAN.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.3246528" vertical-offset="561" max-vertical-offset="1547">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

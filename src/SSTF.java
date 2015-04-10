@@ -1,15 +1,15 @@
 class SSTF implements DiskScheduler{
     int[] queue;
-    int initialCylinder;
+    int startPos;
 
-    public SSTF(int[] queue, int initialCylinder){
+    public SSTF(int[] queue, int startPos){
         this.queue = queue;
-        this.initialCylinder = initialCylinder;
+        this.startPos = startPos;
     }
 
     public int serviceRequests(){
         int headMovement = 0;
-        int prev = initialCylinder;
+        int prev = startPos;
         int [] rpath = path();
         for (int i=0; i < rpath.length; i++) {
             headMovement += Math.abs(rpath[i]-prev);
@@ -20,7 +20,7 @@ class SSTF implements DiskScheduler{
 
     public int[] path(){
         int [] resultPath = new int[queue.length];
-        int now = initialCylinder;
+        int now = startPos;
         int [] requests = new int[queue.length];
         for (int i = 0; i < queue.length; i++){
             requests[i] = queue[i];

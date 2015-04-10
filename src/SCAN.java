@@ -25,6 +25,7 @@ public class SCAN implements DiskScheduler {
      *
      * @return The amount of head movement for this algorithm
      */
+
     @Override
     public int serviceRequests() {
         int head = start;
@@ -80,4 +81,6 @@ public class SCAN implements DiskScheduler {
 
         return total;
     }
+
+
 }
