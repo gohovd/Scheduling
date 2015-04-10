@@ -4,17 +4,17 @@ import java.util.Scanner;
 public class FCFS implements DiskScheduler {
 
     int[] queue;
-    int initialCylinder;
+    int startPos;
     boolean init = false;
 
-    public FCFS(int[] queue, int initialCylinder) {
+    public FCFS(int[] queue, int startPos) {
         this.queue = queue;
-        this.initialCylinder = initialCylinder;
+        this.startPos = startPos;
     }
 
     public int serviceRequests() {
         int headMovement = 0;
-        int prev = initialCylinder;
+        int prev = startPos;
         for (int i = 0; i < queue.length; i++) {
             if (init) {
                 headMovement += Math.abs(queue[i - 1] - queue[i]);

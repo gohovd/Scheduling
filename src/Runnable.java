@@ -8,7 +8,7 @@ public class Runnable {
     static SSTF sstf;
     static SCAN scan;
     static LOOK look;
-    static final int initialCylinder = 50; //starting position(?)
+    static final int startPos = 50; //starting position(?)
     static int[] ref;
 
 
@@ -39,7 +39,7 @@ public class Runnable {
             }
         }
         //here we pass the array of integers to the various scheduling algorithms..
-        sstf = new SSTF(ref, initialCylinder);
+        sstf = new SSTF(ref, startPos);
         System.out.println("SSTF headspace: " + sstf.serviceRequests());
         System.out.print("SSTF path: ");
         for(int i : sstf.returnPath()){
@@ -48,7 +48,7 @@ public class Runnable {
         //change line..
         System.out.println("\n");
 
-        fcfs = new FCFS(ref, initialCylinder);
+        fcfs = new FCFS(ref, startPos);
         System.out.println("FCFS headspace: " + fcfs.serviceRequests());
         System.out.print("FCFS path: ");
         for(int i : fcfs.returnPath()) {
@@ -64,12 +64,12 @@ public class Runnable {
                 max = i;
             }
         }
-        scan = new SCAN(ref, initialCylinder, 1000);
+        scan = new SCAN(ref, startPos, 1000);
         System.out.println("SCAN headspace: " + scan.serviceRequests());
 
         //System.out.println("\n");
 
-        look = new LOOK(ref, initialCylinder);
+        look = new LOOK(ref, startPos);
         System.out.println("LOOK headspace: " + look.serviceRequests());
     }
 }
